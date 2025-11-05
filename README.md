@@ -75,3 +75,17 @@ The network consists of the following components:
    ip routing
    end
    copy running-config startup-config
+
+Repeat for Switch2, Switch3, and Switch4 with unique hostnames.
+
+Connect Devices
+
+Connect PCs to their respective switches using copper straight-through cables.
+
+Connect each LAN to the router using a copper straight-through cable.
+
+Connect Router1 and Router2 using a copper crossover cable on the designated GigabitEthernet ports.
+
+Assign IP Addresses to PCs
+
+Each PC should have a static IP according to the IP addressing table, with the router interface as the default gateway.

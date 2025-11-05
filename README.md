@@ -76,16 +76,44 @@ The network consists of the following components:
    end
    copy running-config startup-config
 
-Repeat for Switch2, Switch3, and Switch4 with unique hostnames.
+   - Repeat a similar configuration for Router2 (LAN3 & LAN4).
+4. **Configure Switches**
+   - Assign hostnames and configure passwords for console and enable mode.
+   - Example Switch1 configuration:
+   ```bash
+   enable
+   configure terminal
+   hostname Switch1
+   enable secret cisco123
+   line console 0
+       password console123
+       login
+   exit
+   service password-encryption
+   banner motd # Authorized Access Only #
+   end
+   copy running-config startup-config
 
-Connect Devices
+   - Repeat for Switch2, Switch3, and Switch4 with unique hostnames.
+5. **Connect Devices**
+   - Connect PCs to their respective switches using copper straight-through cables.
+   - Connect each LAN to the router using a copper straight-through cable.
+   - Connect Router1 and Router2 using a copper crossover cable on the designated GigabitEthernet ports.
+6. **Assign IP Addresses to PCs**
+   - Each PC should have a static IP according to the IP addressing table, with the router interface as the default gateway.
 
-Connect PCs to their respective switches using copper straight-through cables.
+**Notes**
+- Ensure all router interfaces are activated with no shutdown.
+- The configuration ensures proper segmentation of all LANs while allowing inter-router communication.
+- All passwords, banners, and hostnames are configured for clarity and security.
 
-Connect each LAN to the router using a copper straight-through cable.
+**Author**
+   **Reamohetse Ntetshe**
 
-Connect Router1 and Router2 using a copper crossover cable on the designated GigabitEthernet ports.
+**License**
+This project is provided for educational purposes and is free to use and modify.
+```yaml
+   ---
+   If you want, I can **also add “Code Blocks” for all router and switch commands in GitHub-style formatting** so that when you push it to GitHub, it looks clean with monospaced       formatting and syntax highlighting.  
+   Do you want me to do that next?
 
-Assign IP Addresses to PCs
-
-Each PC should have a static IP according to the IP addressing table, with the router interface as the default gateway.

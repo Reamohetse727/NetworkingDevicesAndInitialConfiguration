@@ -1,4 +1,5 @@
 # Multi-LAN Packet Tracer Lab
+![Uploading Screenshot 2025-11-05 201655.png…]()
 
 ## Project Overview
 
